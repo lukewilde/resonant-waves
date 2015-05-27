@@ -12,17 +12,13 @@ var game = {}
   , padding = 20
   , inc = Math.PI / 270;
 
-
 game.create = function () {
   graphics = game.add.graphics(0, 0);
 
-  // set a fill and line style
   game.stage.backgroundColor = 0x002B37;
 
-  for (var i = 0; i <= numberOfLines -1; i++) {
-    smallRadix[i] = 0;
-    wideRadix[i] = 0;
-  }
+  smallRadix = Array.apply(null, new Array(numberOfLines)).map(Number.prototype.valueOf, 0);
+  wideRadix = Array.apply(null, new Array(numberOfLines)).map(Number.prototype.valueOf, 0);
 };
 
 game.update = function () {
