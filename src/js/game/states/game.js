@@ -1,6 +1,48 @@
-var game = {};
+var game = {}
+  , graphics = null
+  , properties = require('../properties')
+
+  , numberOfLines = 25
+  , smallRadix = []
+  , wideRadix = []
+  , x = 0
+  , y1 = 0
+  , y2 = 0
+  , maxWidth = properties.size.x
+  , padding = 20
+  , inc = Math.PI / 270;
+
 
 game.create = function () {
+  graphics = game.add.graphics(0, 0);
+
+  // set a fill and line style
+  game.stage.backgroundColor = 0x002B37;
+
+  for (var i = 0; i <= numberOfLines -1; i++) {
+    smallRadix[i] = 0;
+    wideRadix[i] = 0;
+  }
+};
+
+game.update = function () {
+
+  graphics.clear();
+
+  graphics.lineStyle(1, 0x27A911, 1);
+  graphics.beginFill(0x27A911);
+
+  for (var i = 0; i <= numberOfLines -1; i++) {
+    x = padding + maxWidth / numberOfLines * i;
+    y1 = 150 + Math.sin(smallRadix[i]) * 50 + padding;
+    y2 = 150 + Math.sin(wideRadix[i]) * 120 + padding;
+
+    graphics.drawRect(x, y1, 1, y2);
+
+    smallRadix[i] += inc * ((i + 10) * 0.2);
+    wideRadix[i] += inc * ((i + 15) * 0.2);
+  }
+
 };
 
 module.exports = game;
