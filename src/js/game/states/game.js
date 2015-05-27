@@ -2,7 +2,7 @@ var game = {}
   , graphics = null
   , properties = require('../properties')
 
-  , numberOfLines = 25
+  , numberOfLines = 50
   , smallRadix = []
   , wideRadix = []
   , x = 0
