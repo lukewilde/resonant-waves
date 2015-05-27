@@ -38,8 +38,8 @@ game.update = function () {
     graphics.moveTo(x, y1);
     graphics.lineTo(x, y2);
 
-    smallRadix[i] += inc * ((i + 10) * 0.2);
-    wideRadix[i] += inc * ((i + 15) * 0.2);
+    smallRadix[i] += inc * ((i + 10) * 0.15);
+    wideRadix[i] += inc * ((i + 15) * 0.15);
   }
 
 };
