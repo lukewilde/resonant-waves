@@ -33,7 +33,8 @@ game.update = function () {
     y1 = 150 + Math.sin(smallRadix[i]) * 50 + padding;
     y2 = 150 + Math.sin(wideRadix[i]) * 120 + padding;
 
-    graphics.drawRect(x, y1, 1, y2);
+    graphics.moveTo(x, y1);
+    graphics.lineTo(x, y2);
 
     smallRadix[i] += inc * ((i + 10) * 0.2);
     wideRadix[i] += inc * ((i + 15) * 0.2);
