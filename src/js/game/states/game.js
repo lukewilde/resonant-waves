@@ -29,7 +29,9 @@ game.update = function () {
   graphics.beginFill(0x27A911);
 
   for (var i = 0; i <= numberOfLines -1; i++) {
-    x = padding + maxWidth / numberOfLines * i;
+
+    x = Math.round(padding + maxWidth / numberOfLines * i);
+
     y1 = 150 + Math.sin(smallRadix[i]) * 50 + padding;
     y2 = 150 + Math.sin(wideRadix[i]) * 120 + padding;
 
