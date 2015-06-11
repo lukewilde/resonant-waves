@@ -10,6 +10,11 @@ boot.create = function () {
 
   this.game.sound.mute = properties.mute;
 
+  this.game.scale.pageAlignHorizontally = true;
+  this.game.scale.pageAlignVertically = true;
+
+  this.scale.refresh();
+
   this.game.state.start('preloader');
 };
 
